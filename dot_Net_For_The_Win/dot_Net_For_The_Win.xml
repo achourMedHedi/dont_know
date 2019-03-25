@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dot_Net_For_The_Win</name>
+    </assembly>
+    <members>
+        <member name="M:dot_Net_For_The_Win.Controllers.AuthController.GetAdmin">
+            <summary>
+            get admin account information
+            </summary>
+            <response code="200"> success </response>
+            <response code="400"> wrong token </response>
+            <returns></returns>
+        </member>
+        <member name="M:dot_Net_For_The_Win.Controllers.AuthController.GetStudnet">
+            <summary>
+            get student account information
+            </summary>
+            <response code="200"> success </response>
+            <response code="400"> wrong token </response>
+            <returns></returns>
+        </member>
+        <member name="M:dot_Net_For_The_Win.Controllers.AuthController.Post(Auth.Core.Entities.User)">
+            <summary>
+            sign in
+            </summary>
+            <response code="200"> success </response>
+            <response code="400"> wrong informations </response>
+            <returns></returns>
+        </member>
+        <member name="M:dot_Net_For_The_Win.Controllers.Neo4jController.Get">
+            <summary>
+            Get All Teams
+            </summary>
+            <response code="200"> success </response>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

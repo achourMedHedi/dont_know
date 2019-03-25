@@ -4,8 +4,8 @@
     "windowsAuthentication": false, 
     "anonymousAuthentication": true, 
     "iisExpress": {
-      "applicationUrl": "http://localhost:53016",
-      "sslPort": 44364
+      "applicationUrl": "http://localhost:60286",
+      "sslPort": 44313
     }
   },
   "profiles": {
@@ -17,12 +17,11 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "dot_Net_For_The_Win": {
+    "FreelancerApi": {
       "commandName": "Project",
       "launchBrowser": true,
-      //"launchUrl": "api/neo4j",
-      "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:7000",
+      "launchUrl": "api/Freelancers",
+      "applicationUrl": "http://localhost:7001",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

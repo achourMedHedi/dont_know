@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace dot_Net_For_The_Win
+namespace FreelancerApi
 {
     public class Program
     {
@@ -19,10 +19,6 @@ namespace dot_Net_For_The_Win
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .ConfigureAppConfiguration((host,config) =>
-                {
-                    config.AddJsonFile("ocelot.json");
-                })
                 .UseStartup<Startup>();
     }
 }

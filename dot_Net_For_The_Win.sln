@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dot_Net_For_The_Win", "dot_Net_For_The_Win\dot_Net_For_The_Win.csproj", "{8C6C0977-CE1C-477A-ABC4-54A115635101}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dot_Net_For_The_Win", "dot_Net_For_The_Win\dot_Net_For_The_Win.csproj", "{8C6C0977-CE1C-477A-ABC4-54A115635101}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Core", "Auth.Core\Auth.Core.csproj", "{5042F64A-83F1-4C7D-903D-D1F80E3209C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4j_For_The_Win", "Neo4j_For_The_Win\Neo4j_For_The_Win.csproj", "{F9E001B1-9D26-4F13-BE66-BAA830A20BEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyApi", "CompanyApi\CompanyApi.csproj", "{887C6C1E-D764-4251-AF74-2D42FF6C56FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreelancerApi", "FreelancerApi\FreelancerApi.csproj", "{073DDEDF-4AC0-42D4-BCD4-902DFF55BAC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +23,22 @@ Global
 		{8C6C0977-CE1C-477A-ABC4-54A115635101}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C6C0977-CE1C-477A-ABC4-54A115635101}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C6C0977-CE1C-477A-ABC4-54A115635101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5042F64A-83F1-4C7D-903D-D1F80E3209C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5042F64A-83F1-4C7D-903D-D1F80E3209C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5042F64A-83F1-4C7D-903D-D1F80E3209C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5042F64A-83F1-4C7D-903D-D1F80E3209C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9E001B1-9D26-4F13-BE66-BAA830A20BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9E001B1-9D26-4F13-BE66-BAA830A20BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9E001B1-9D26-4F13-BE66-BAA830A20BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9E001B1-9D26-4F13-BE66-BAA830A20BEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{887C6C1E-D764-4251-AF74-2D42FF6C56FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{887C6C1E-D764-4251-AF74-2D42FF6C56FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{887C6C1E-D764-4251-AF74-2D42FF6C56FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{887C6C1E-D764-4251-AF74-2D42FF6C56FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{073DDEDF-4AC0-42D4-BCD4-902DFF55BAC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{073DDEDF-4AC0-42D4-BCD4-902DFF55BAC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{073DDEDF-4AC0-42D4-BCD4-902DFF55BAC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{073DDEDF-4AC0-42D4-BCD4-902DFF55BAC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
