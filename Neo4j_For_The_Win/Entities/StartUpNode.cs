@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Neo4j_For_The_Win.Entities
 {
-    [CypherLabel("StartUp")]
+    [CypherLabel(Name ="StartUp")]
     public class StartUpNode
     {
     

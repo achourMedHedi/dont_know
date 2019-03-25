@@ -11,7 +11,7 @@
       ],
       "UpstreamPathTemplate": "/freelancer-api/{catchAll}"
     },
-   /* {
+    /* {
       "DownstreamPathTemplate": "/api/{catchAll}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -33,6 +33,18 @@
       ],
       "UpstreamPathTemplate": "/company-api/{catchAll}"
     }
+  ],
+  "SwaggerEndPoints": [
+    {
+      "Key": "products",
+      "Config": [
+        {
+          "Name": "Products API",
+          "Version": "v3",
+          "Url": "http://localhost:7001/swagger/v2/swagger.json"
+        }
+      ]
+    },
   ],
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:7000"

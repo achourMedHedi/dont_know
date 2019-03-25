@@ -7,7 +7,7 @@ using Neo4jClient.Extension.Cypher.Attributes;
 
 namespace Neo4j_For_The_Win.Entities
 {
-    [CypherLabel("Team")]
+    [CypherLabel(Name ="Team")]
     public class TeamNode
     {
         [CypherMatch]

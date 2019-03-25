@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Ocelot.Middleware;
 using Ocelot.DependencyInjection;
+using Ocelot.Configuration;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.IO;
@@ -88,6 +89,8 @@ namespace dot_Net_For_The_Win
             services.AddNeo4j();
             services.AddNeo4jForTheWin();
             services.AddOcelot(Configuration);
+            services.AddSwaggerForOcelot(Configuration);
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
         }
@@ -124,7 +127,9 @@ namespace dot_Net_For_The_Win
 
             app.UseHttpsRedirection();
             app.UseMvc();
-        
+            app.UseDeveloperExceptionPage();
+
+            app.UseSwaggerForOcelotUI(Configuration, opt => { opt.EndPointBasePath = "/swagger/docs"; }).UseOcelot().Wait();
 
             await app.UseOcelot();
         }
