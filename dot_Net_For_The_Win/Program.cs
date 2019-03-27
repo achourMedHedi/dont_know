@@ -28,6 +28,7 @@ namespace dot_Net_For_The_Win
                        .AddJsonFile("ocelot.json")
                        .AddEnvironmentVariables();
                 })
+                .UseKestrel()
                 .UseStartup<Startup>();
     }
 }

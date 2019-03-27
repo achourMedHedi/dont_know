@@ -9,10 +9,11 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Auth.Core.Services
 {
-    public class UserService : IUserService
+    public class UserAuth : IUserAuth
     {
         // users hardcoded for simplicity, store in a db with hashed passwords in production applications
         private List<User> _users = new List<User>
@@ -23,14 +24,14 @@ namespace Auth.Core.Services
 
         private readonly AppSettings _appSettings;
 
-        public UserService(IOptions<AppSettings> appSettings)
+        public UserAuth(IOptions<AppSettings> appSettings)
         {
             _appSettings = appSettings.Value;
         }
 
-        public User Authenticate(string username, string password)
+        public async Task<User> AuthenticateAsync(string username, string password)
         {
-            var user = _users.SingleOrDefault(x => x.Username == username && x.Password == password);
+            var user = _users?.SingleOrDefault(x => x.Username == username && x.Password == password);
 
             // return null if user not found
             if (user == null)
@@ -61,7 +62,7 @@ namespace Auth.Core.Services
             return user;
         }
 
-        public IEnumerable<User> GetAll()
+        public async Task<IEnumerable<User>> GetAll()
         {
             // return users without passwords
             return _users.Select(x => {

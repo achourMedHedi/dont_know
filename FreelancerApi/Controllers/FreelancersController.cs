@@ -10,8 +10,14 @@ namespace FreelancerApi.Controllers
     [ApiController]
     public class FreelancersController : ControllerBase
     {
+        /// <summary>
+        /// test names
+        /// </summary>
+        /// <returns></returns>
+        [ProducesResponseType(typeof(string), 200)]
+        [ApiExplorerSettings(GroupName = "v1")]
         // GET api/values
-        [HttpGet]
+        [HttpGet(Name ="testNames")]
         public ActionResult<IEnumerable<string>> Get()
         {
             return new string[] { "Achour", "Arsslen" , "Raed" , "Yahya" , "Koussay" };

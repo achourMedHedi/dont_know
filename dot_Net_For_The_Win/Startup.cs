@@ -15,6 +15,9 @@ using Swashbuckle.AspNetCore.Swagger;
 using System;
 using System.IO;
 using System.Reflection;
+using Microsoft.Extensions.Logging;
+using Auth.Core;
+using Auth.Core.Services;
 
 namespace dot_Net_For_The_Win
 {
@@ -55,7 +58,7 @@ namespace dot_Net_For_The_Win
                     ValidateAudience = false
                 };
             });
-
+            /*
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
@@ -83,13 +86,15 @@ namespace dot_Net_For_The_Win
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
-
+            */
+        
 
             services.AddAuth();
             services.AddNeo4j();
             services.AddNeo4jForTheWin();
             services.AddOcelot(Configuration);
             services.AddSwaggerForOcelot(Configuration);
+            //services.AddScoped<ILogger, Logger<UserService>>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
@@ -114,17 +119,7 @@ namespace dot_Net_For_The_Win
 
             app.UseAuthentication();
 
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
-
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), 
-            // specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-                c.SwaggerEndpoint("/freelancer-api/swagger/v2/swagger.json", "Freelancer Api");
-            });
-
+            
             app.UseHttpsRedirection();
             app.UseMvc();
             app.UseDeveloperExceptionPage();

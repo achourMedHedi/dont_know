@@ -20,8 +20,7 @@
     "dot_Net_For_The_Win": {
       "commandName": "Project",
       "launchBrowser": true,
-      //"launchUrl": "api/neo4j",
-      "launchUrl": "swagger",
+      "launchUrl": "api/neo4j",
       "applicationUrl": "http://localhost:7000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

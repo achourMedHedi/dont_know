@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Neo4j.Driver.V1;
 using Neo4j_For_The_Win.Contracts;
 using Neo4j_For_The_Win.Repositories;
+using Neo4j_For_The_Win.Services;
 using Neo4jClient;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,7 @@ namespace dot_Net_For_The_Win.ServerCollectionExtension
     {
         public static IServiceCollection AddAuth(this IServiceCollection services)
         {
-            services.AddScoped < IUserService , UserService > ();
+            services.AddScoped < IUserAuth , UserService > ();
             return services;
         }
         public static IServiceCollection AddNeo4j(this IServiceCollection services)
@@ -29,7 +30,7 @@ namespace dot_Net_For_The_Win.ServerCollectionExtension
         }
         public static IServiceCollection AddNeo4jForTheWin(this IServiceCollection services)
         {
-            services.AddScoped<IMoviesRepository, MoviesRepository>();
+            services.AddScoped<ICrudService, CrudService>();
             return services;
         }
 

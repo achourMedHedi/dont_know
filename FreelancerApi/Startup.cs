@@ -31,7 +31,7 @@ namespace FreelancerApi
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v2", new Info { Title = "My API", Version = "v2" });
+                c.SwaggerDoc("v1", new Info { Title = "Freelancer API", Version = "v1" });
             });
         }
 
@@ -39,10 +39,9 @@ namespace FreelancerApi
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             app.UseSwagger();
-
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v2/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Freelancer V1");
             });
 
             app.UseHttpsRedirection();

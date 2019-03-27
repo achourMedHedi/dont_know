@@ -8,6 +8,7 @@ using Auth.Core.Contract;
 using Auth.Core.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace dot_Net_For_The_Win.Controllers
 {
@@ -17,9 +18,11 @@ namespace dot_Net_For_The_Win.Controllers
     public class AuthController : ControllerBase
     {
 
-        private IUserService _userService;
-        public AuthController(IUserService userService)
+        private IUserAuth _userService;
+        private ILogger _logger;
+        public AuthController(IUserAuth userService , ILogger logger)
         {
+            _logger = logger;
             _userService = userService;
         }
         // GET api/Auth/admin
@@ -85,9 +88,9 @@ namespace dot_Net_For_The_Win.Controllers
         [ApiExplorerSettings(GroupName = "v1")]
 
         [HttpPost(Name = "SignIn")]
-        public IActionResult Post([FromBody] User userParams)
+        public async Task<IActionResult> Post([FromBody] User userParams)
         {
-            var user = _userService.Authenticate(userParams.Username, userParams.Password);
+            var user = await _userService.AuthenticateAsync(userParams.Username, userParams.Password);
             if (user == null)
             {
                 return BadRequest();

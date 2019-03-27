@@ -9,19 +9,10 @@
           "Port": 7001
         }
       ],
-      "UpstreamPathTemplate": "/freelancer-api/{catchAll}"
+      "UpstreamPathTemplate": "/freelancer-api/{catchAll}",
+      "SwaggerKey": "freelancer"
+
     },
-    /* {
-      "DownstreamPathTemplate": "/api/{catchAll}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 7001
-        }
-      ],
-      "UpstreamPathTemplate": "/freelancer-api/{catchAll}"
-    },*/
     {
       "DownstreamPathTemplate": "/api/{catchAll}",
       "DownstreamScheme": "http",
@@ -31,20 +22,32 @@
           "Port": 7002
         }
       ],
-      "UpstreamPathTemplate": "/company-api/{catchAll}"
+      "UpstreamPathTemplate": "/company-api/{catchAll}",
+      "SwaggerKey": "company"
+
     }
   ],
   "SwaggerEndPoints": [
     {
-      "Key": "products",
+      "Key": "freelancer",
       "Config": [
         {
-          "Name": "Products API",
-          "Version": "v3",
-          "Url": "http://localhost:7001/swagger/v2/swagger.json"
+          "Name": "freelancer API",
+          "Version": "v1",
+          "Url": "http://localhost:7001/swagger/v1/swagger.json"
         }
       ]
     },
+    {
+      "Key": "company",
+      "Config": [
+        {
+          "Name": "company API",
+          "Version": "v1",
+          "Url": "http://localhost:7002/swagger/v1/swagger.json"
+        }
+      ]
+    }
   ],
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:7000"

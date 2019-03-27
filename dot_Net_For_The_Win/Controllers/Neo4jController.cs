@@ -5,53 +5,47 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Neo4j.Driver.V1;
-using Neo4j_For_The_Win.Contracts;
 using Neo4jClient.Extension;
 using Neo4jClient.Extension.Cypher;
 using Newtonsoft.Json;
 using Neo4jClient.DataAnnotations;
-using Neo4j_For_The_Win.Entities;
 using Neo4jClient;
 using System.Collections;
+using Neo4j_For_The_Win.EntityLayer.Relationships;
+using Neo4j_For_The_Win.Contracts;
+using Neo4j_For_The_Win.EntityLayer.Nodes;
 
 namespace dot_Net_For_The_Win.Controllers
 {
 
-    public class Relation
-    {
-        public TeamNode Relative { get; set; }
-        public string Relationship { get; set; }
-    }
     [Route("api/[controller]")]
     [ApiController]
     public class Neo4jController : ControllerBase
     {
 
-        private readonly IMoviesRepository _moviesRepository;
+        private readonly ICrudService crudService;
         private readonly IGraphClient client;
 
-        public Neo4jController(IGraphClient client , IMoviesRepository moviesRepository)
+        public Neo4jController(IGraphClient client , ICrudService crudService)
         {
-            _moviesRepository = moviesRepository;
+            this.crudService = crudService;
             this.client = client;
         }
-        // GET: api/Neo4j
 
-        /// <summary>
-        /// Get All Teams
-        /// </summary>
-        /// <response code="200"> success </response>
-        /// <returns></returns>
-        [ProducesResponseType(typeof(TeamNode), 200)]
-        [ApiExplorerSettings(GroupName = "v1")]
-
-        [HttpGet(Name = "GetAllTeams")]
-        public IActionResult Get()
+        [HttpPost]
+        public IActionResult PostAsync([FromBody] WorkdsInRelationship body)
         {
+                       var result = crudService.Find();
+                        if (result == null)
+                        {
+                            return BadRequest();
+                        }
+                        return Ok(result);
             
-            return Ok(_moviesRepository.GetTeams());
+
+
         }
 
-      
+
     }
 }

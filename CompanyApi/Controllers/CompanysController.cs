@@ -12,9 +12,9 @@ namespace CompanyApi.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public IActionResult Get()
         {
-            return new string[] { "GoMyCode", "Talan" };
+            return Ok("gg easy");
         }
 
       

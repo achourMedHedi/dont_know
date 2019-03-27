@@ -28,12 +28,5 @@
             <response code="400"> wrong informations </response>
             <returns></returns>
         </member>
-        <member name="M:dot_Net_For_The_Win.Controllers.Neo4jController.Get">
-            <summary>
-            Get All Teams
-            </summary>
-            <response code="200"> success </response>
-            <returns></returns>
-        </member>
     </members>
 </doc>

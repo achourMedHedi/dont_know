@@ -4,16 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Neo4j_For_The_Win.Entities
-{
+namespace Neo4j_For_The_Win.EntityLayer.Nodes
+{ 
     [CypherLabel(Name ="StartUp")]
-    public class StartUpNode
+    [Table("StartUp")]
+    public class Company
     {
-    
-        [CypherMatch]
         public string Name { get; set; }
-        
-        [CypherMergeOnCreate]
-        public ICollection<TeamNode> Teams { get; set; }
+
     }
 }
